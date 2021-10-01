@@ -14,19 +14,19 @@
     box-shadow: none;
     outline: none;
 }
-.app-list-item .btn-star {
-    color: #FFD700;
+.app-list-item .btn-exclamation {
+    color: #aeaeae;
 }
 .app-list-item .btn-trash {
     color: red;
 }
-.app-list-item .fa-heart {
+.app-list-item .fa-check {
     width: 35px;
     height: 35px;
     text-align: center;
     line-height: 35px;
     font-size: 16px;
-    color: red;
+    color: green;
     transition: 0.3s all;
     transform: translateX(30px);
     opacity: 0;
@@ -40,15 +40,19 @@
     transition: 0.5s all;
 }
 
-.app-list-item.like .fa-heart {
+.app-list-item.like .app-list-item-label {
+    text-decoration: line-through;
+}
+
+.app-list-item.like .fa-check {
     opacity: 1;
     transform: translateX(0px);
 }
 
 .app-list-item.important .app-list-item-label {
-    color: #FFD700;
+    color: rgb(2, 188, 235);
 }
 
-.app-list-item.important .btn-star {
-    color: #aeaeae;
+.app-list-item.important .btn-exclamation {
+    color: rgb(2, 188, 235);
 }

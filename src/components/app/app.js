@@ -13,9 +13,9 @@ export default class App extends Component {
         super(props);
         this.state = {
             data : [
-                {label: 'Going to learn React', important: true, like: false, id: 1},
-                {label: 'That is so good', important: false, like: false, id: 2},
-                {label: 'I need a break...', important: false, like: false, id: 3}
+                {label: 'Выпить кофе', important: false, like: false, id: 1},
+                {label: 'Выучить React', important: true, like: false, id: 2},
+                {label: 'Сделать превосходное приложение', important: false, like: false, id: 3}
             ],
             term: '',
             filter: 'all'
@@ -94,10 +94,12 @@ export default class App extends Component {
     }
 
     filterPost(items, filter) {
-        if (filter === 'like') {
-            return items.filter(item => item.like)
-        } else {
-            return items
+        if (filter === 'all') {
+            return items;
+        } else if (filter === 'done'){
+            return items.filter((item) => (!item.like));
+        } else if (filter === 'like') {
+            return items.filter((item) => item.like);
         }
     }
 
@@ -113,11 +115,12 @@ export default class App extends Component {
         const {data, term, filter} = this.state;
 
         const liked = data.filter((item) => item.like).length;
+        const important = data.filter((item) => item.important).length;
         const allPosts = data.length;
         const visiblePosts = this.filterPost(this.searchPost(data, term), filter);
         return (
             <div className="app">
-                <AppHeader liked={liked} allPosts={allPosts}/>
+                <AppHeader liked={liked} allPosts={allPosts} important={important}/>
                 <div className="search-panel d-flex">
                     <SearchPanel
                         onUpdateSearch={this.onUpdateSearch}/>

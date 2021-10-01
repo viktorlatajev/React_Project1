@@ -8,7 +8,8 @@ export default class PostStatusFilter extends Component {
         super(props);
         this.buttons = [
             {name: 'all', label: 'Все'},
-            {name: 'like', label: 'Понравилось'}
+            {name: 'done', label: 'Активные'},
+            {name: 'like', label: 'Сделано'}
         ];
     }
     render() {

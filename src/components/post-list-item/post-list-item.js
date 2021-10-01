@@ -26,9 +26,9 @@ export default class PostListItem extends Component {
                 <div className="d-flex justify-content-center align-items-center">
                     <button
                     type="button"
-                    className="btn-star btn-sm"
+                    className="btn-exclamation btn-sm"
                     onClick={onToggleImportant}>
-                        <i className="fa fa-star"></i>
+                        <i className="fa fa-exclamation"></i>
                     </button>
                     <button
                     type="button"
@@ -36,7 +36,7 @@ export default class PostListItem extends Component {
                     onClick={onDelete}>
                         <i className="fa fa-trash-o"></i>
                     </button>
-                    <i className="fa fa-heart"></i>
+                    <i className="fa fa-check"></i>
                 </div>
             </div>
         )
